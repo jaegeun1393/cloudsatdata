@@ -3,7 +3,7 @@
   "paths": {
     "/users": {
       "name": "/users",
-      "lambdaFunction": "cloudsatfunction",
+      "lambdaFunction": "usermanagement",
       "permissions": {
         "setting": "open"
       }

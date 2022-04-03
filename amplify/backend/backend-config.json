@@ -4,16 +4,21 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "usermanagement": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "api": {
-    "cloudsatapi": {
+    "cloudapi": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "cloudsatfunction",
+          "resourceName": "usermanagement",
           "attributes": [
             "Name",
             "Arn"
