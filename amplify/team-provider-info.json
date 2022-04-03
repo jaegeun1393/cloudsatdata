@@ -15,7 +15,7 @@
       "function": {
         "usermanagement": {
           "deploymentBucketName": "amplify-amplifyab8a2ec6fec94-staging-73847-deployment",
-          "s3Key": "amplify-builds/usermanagement-51664c426a7a6851716e-build.zip"
+          "s3Key": "amplify-builds/usermanagement-34685730736e426d464b-build.zip"
         }
       }
     }
