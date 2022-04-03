@@ -1,9 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import {API} from 'aws-amplify';
 import './css/App.css';
 
 
 function App() {
-
+  useEffect(() => {
+    const getData = async () => {
+      const data = await API.post('cloudsatapi', '/users', {
+        body: {
+          name: 'aiden'
+        }
+      })
+      console.log(data)
+    }
+  })
   return (
     <div className="App">
       <section className="w-full px-6 pb-12 antialiased bg-white">
