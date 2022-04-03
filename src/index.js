@@ -8,11 +8,10 @@ import Footer from './footer';
 import './css/index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Amplify, { API } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
 Amplify.configure(awsconfig);
-API.configure(awsconfig);
 
 ReactDOM.render(
   <React.StrictMode>
