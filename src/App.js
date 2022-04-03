@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {API} from 'aws-amplify';
 import './css/App.css';
 
-
 function App() {
   useEffect(() => {
     const getData = async () => {

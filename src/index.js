@@ -11,11 +11,32 @@ import reportWebVitals from './reportWebVitals';
 import {Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
+import { DataStore } from '@aws-amplify/datastore';
+import { Users } from './models';
+
 Amplify.configure(awsconfig);
+
+async function onQuery() {
+  const models = await DataStore.query(Users);
+  console.log(models);
+}
+
+
+function onCreate() {
+  DataStore.save(
+    new Users({
+		"pswd": "This is the test info",
+		"uid": "This is the uid",
+		"name": "Lorem ipsum dolor sit amet"
+	})
+);
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <Nav />
+    <input type="button" value="update" onClick={onCreate} />
+    <input type="button" value="click" onClick={onQuery} />
     <App />
     <Footer />
   </React.StrictMode>,
