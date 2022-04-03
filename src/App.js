@@ -1,19 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { API } from 'aws-amplify';
 
 import './css/App.css';
 
 
 function App() {
 
-  const [greeting, setGreeting] = useState(null)
-  async function fetchGreeting() {
-    const apiData = await API.get('cloudsatapi', '/users')
-    setGreeting(apiData.message)
-  }
-  useEffect(() => {
-    fetchGreeting()
-  }, [])
 
   return (
     <div className="App">
@@ -27,7 +18,7 @@ function App() {
             <div className="flex flex-col items-center mt-12 text-center">
             <span className="relative inline-flex w-full md:w-auto">
             <a href="#_" type="button" className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold leading-6 text-white bg-indigo-600 border border-transparent rounded-full md:w-auto hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
-              Join our Community {greeting}
+              Join our Community
             </a>
             </span>
             <a href="#" className="mt-3 text-sm text-indigo-500">Learn More</a>
