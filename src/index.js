@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Amplify } from 'aws-amplify';
+import awsconfig from './aws-exports';
+import {BrowserRouter} from 'react-router-dom'; 
 
 import App from './App';
 import Nav from './navbar';
 import Footer from './footer';
-
-import './css/index.css';
 import reportWebVitals from './reportWebVitals';
 
-import {Amplify } from 'aws-amplify';
-import awsconfig from './aws-exports';
+import './css/index.css';
 
 import { DataStore } from '@aws-amplify/datastore';
 import { Users } from './models';
@@ -33,15 +33,16 @@ function onCreate() {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <Nav />
-    <input type="button" value="update" onClick={onCreate} />
-    <input type="button" value="click" onClick={onQuery} />
     <App />
     <Footer />
-  </React.StrictMode>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
+
+  //  <input type="button" value="update" onClick={onCreate} />
+  //  <input type="button" value="click" onClick={onQuery} />
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
