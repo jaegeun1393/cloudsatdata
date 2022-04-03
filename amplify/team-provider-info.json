@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cloudsatdata-dev-222515-authRole",
+      "UnauthRoleArn": "arn:aws:iam::875286428486:role/amplify-cloudsatdata-dev-222515-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::875286428486:role/amplify-cloudsatdata-dev-222515-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cloudsatdata-dev-222515-deployment",
+      "UnauthRoleName": "amplify-cloudsatdata-dev-222515-unauthRole",
+      "StackName": "amplify-cloudsatdata-dev-222515",
+      "StackId": "arn:aws:cloudformation:us-east-1:875286428486:stack/amplify-cloudsatdata-dev-222515/739d85a0-b30e-11ec-b3c9-12bd40e2e9c9",
+      "AmplifyAppId": "d12mjk9sjdkss8"
+    },
+    "categories": {
+      "function": {
+        "cloudsatfunction": {
+          "deploymentBucketName": "amplify-cloudsatdata-dev-222515-deployment",
+          "s3Key": "amplify-builds/cloudsatfunction-50676e7a397364654879-build.zip"
+        }
+      }
+    }
+  }
+}
