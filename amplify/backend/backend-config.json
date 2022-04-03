@@ -1,27 +1,6 @@
 {
-  "function": {
-    "usermanagement": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "api": {
-    "cloudsatapi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "usermanagement",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    }
-  },
+  "function": {},
+  "api": {},
   "auth": {
     "cloudsatdatafaee2b11": {
       "service": "Cognito",

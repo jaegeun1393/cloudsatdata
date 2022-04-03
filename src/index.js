@@ -8,11 +8,6 @@ import Footer from './footer';
 import './css/index.css';
 import reportWebVitals from './reportWebVitals';
 
-import { Amplify } from 'aws-amplify';
-import awsconfig from './aws-exports';
-
-Amplify.configure(awsconfig);
-
 ReactDOM.render(
   <React.StrictMode>
     <Nav />
