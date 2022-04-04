@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Amplify, Auth } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
+import { Auth } from '@aws-amplify/auth'
 import awsconfig from './aws-exports';
 import {BrowserRouter} from 'react-router-dom'; 
 
