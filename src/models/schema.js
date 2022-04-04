@@ -10,28 +10,26 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "LoginID": {
+                    "name": "LoginID",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "pswd": {
                     "name": "pswd",
                     "isArray": false,
                     "type": {
                         "enum": "Text"
                     },
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "uid": {
-                    "name": "uid",
-                    "isArray": false,
-                    "type": {
-                        "enum": "Text"
-                    },
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "name": {
-                    "name": "name",
-                    "isArray": false,
-                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -87,5 +85,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "f8936ebddc0804a08edcf3e98ff94b41"
+    "version": "2d3859e0c33a3dcbe1e93b1c5830ed79"
 };

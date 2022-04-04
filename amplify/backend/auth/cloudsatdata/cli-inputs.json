@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "cloudsatdatafaee2b11_identitypool_faee2b11",
+    "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "cloudsfaee2b11",
-    "userPoolName": "cloudsatdatafaee2b11_userpool_faee2b11",
+    "resourceNameTruncated": "clouds3be980c4",
+    "userPoolName": "cloudsatdata",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -20,25 +20,25 @@
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "email"
+      "name"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [
-      "email"
-    ],
-    "userpoolClientReadAttributes": [
-      "email"
-    ],
-    "userpoolClientLambdaRole": "cloudsfaee2b11_userpoolclient_lambda_role",
+    "userpoolClientWriteAttributes": [],
+    "userpoolClientReadAttributes": [],
+    "userpoolClientLambdaRole": "clouds3be980c4_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "faee2b11",
-    "resourceName": "cloudsatdatafaee2b11",
+    "sharedId": "3be980c4",
+    "resourceName": "cloudsatdata",
     "authSelections": "identityPoolAndUserPool",
-    "useDefault": "default",
-    "userPoolGroupList": [],
     "serviceName": "Cognito",
+    "useDefault": "manual",
+    "userPoolGroups": false,
+    "userPoolGroupList": [],
+    "adminQueries": false,
+    "thirdPartyAuth": false,
+    "authProviders": [],
     "usernameCaseSensitive": false,
     "useEnabledMfas": true
   }

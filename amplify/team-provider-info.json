@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "cloudsatdatafaee2b11": {}
+        "cloudsatdatafaee2b11": {},
+        "cloudsatdata": {}
       },
       "function": {
         "usermanagement": {

@@ -1,9 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
-import {API} from 'aws-amplify';
+import {Auth, Hub} from 'aws-amplify';
 import './css/App.css';
 
+const initialsignset = {
+  userid: '', password: ''
+}
+
 function Login() {
+  const [formState, updateformState] = useState(initialsignset)
+  function onChange(e) {
+    e.persist()
+    updateformState(() => ({ ...formState, [e.target.name]: e.target.value }))
+  }
+
+  async function signIn() {
+    const { userid, password } = formState
+    console.log(formState)
+    await Auth.signIn(userid, password)
+  }
   return (
     <div className="Login">
 
@@ -12,14 +27,14 @@ function Login() {
         <div className="py-12 p-10 bg-white rounded-xl">
           <div className="mb-6">
             <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">ID</label>
-            <input type="text" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="User ID" />
+            <input name="userid" type="text" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="User ID" onChange={onChange}/>
           </div>
           <div className="mb-6">
             <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">Password</label>
-            <input type="password" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Password" />
+            <input name="password" type="password" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Password" onChange={onChange}/>
           </div>
           <Link to="/signup" className="text-sm text-gray-700 inline-block mt-4 hover:text-indigo-600 hover:underline hover:cursor-pointer transition duration-200">Sign up</Link>
-          <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300">LOGIN</button>
+          <button onClick={signIn} className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300">LOGIN</button>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
   "serviceConfiguration": {
     "apiName": "cloudsatdata",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/tmp/amplify-97f6edb8-5793-4342-9773-7965566e7c28/amplify/backend/api/cloudsatdata/schema.graphql",
+    "gqlSchemaPath": "/tmp/amplify-8dd04ca0-d0b8-41bd-9b7c-9f4184886e75/amplify/backend/api/cloudsatdata/schema.graphql",
     "defaultAuthType": {
       "mode": "API_KEY",
       "keyDescription": "api key description",

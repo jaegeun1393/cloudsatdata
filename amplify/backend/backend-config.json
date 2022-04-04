@@ -44,7 +44,7 @@
     }
   },
   "auth": {
-    "cloudsatdatafaee2b11": {
+    "cloudsatdata": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -53,7 +53,7 @@
         "socialProviders": [],
         "usernameAttributes": [],
         "signupAttributes": [
-          "EMAIL"
+          "NAME"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,

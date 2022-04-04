@@ -30,8 +30,6 @@ async function onDeleteAll() {
 ReactDOM.render(
   <BrowserRouter>
     <Nav />
-    <input type="button" value="click" onClick={onQuery} />
-    <input type="button" value="del" onClick={onDeleteAll} />
     <App />
     <Footer />
   </BrowserRouter>,
