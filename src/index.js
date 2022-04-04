@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Amplify, Auth } from 'aws-amplify';
-import awsmobile from './aws-exports';
+import Amplify from '@aws-amplify/core'
+import { Auth } from '@aws-amplify/auth'
+import awsmobile from './aws-exports'
 import {BrowserRouter} from 'react-router-dom'; 
 
 import App from './App';
