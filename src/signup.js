@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from "react-router-dom";
-import {Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
+import {Auth, Hub} from 'aws-amplify';
 import { DataStore } from '@aws-amplify/datastore';
 import { Users } from './models';
 
 import './css/App.css';
-
-Amplify.configure(awsconfig);
-Auth.configure(awsconfig);
 
 const sigstate = {
   form: 'signup'
@@ -49,7 +45,6 @@ function Signup() {
         alert(error)
 
         let result = text.includes("email already");
-        console.log(result);
         if (result) {
           await Auth.resendSignUp(username);
           updateformState(() => ({ ...formState, form: "confirm" }))

@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "clouds8163be23",
+    "resourceNameTruncated": "cloudsa064840f",
     "userPoolName": "cloudsatdata",
     "autoVerifiedAttributes": [
       "email"
@@ -14,23 +14,23 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification code: {####}",
-    "emailVerificationMessage": "Verification code: {####}",
+    "emailVerificationSubject": "[Verification] Welcome to the Cloud. SAT!",
+    "emailVerificationMessage": "Thank you for joining us today.\n\nVerification code: {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "email",
-      "name"
+      "name",
+      "email"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "clouds8163be23_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "cloudsa064840f_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "8163be23",
+    "sharedId": "a064840f",
     "resourceName": "cloudsatdata",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
