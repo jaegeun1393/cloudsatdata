@@ -11,8 +11,8 @@ import reportWebVitals from './reportWebVitals';
 
 import './css/index.css';
 
-import { DataStore } from '@aws-amplify/datastore';
-import { Users } from './models';
+import { DataStore, Predicates } from '@aws-amplify/datastore';
+import { Users, Post } from './models';
 
 Amplify.configure(awsconfig);
 
@@ -22,19 +22,16 @@ async function onQuery() {
 }
 
 
-function onCreate() {
-  DataStore.save(
-    new Users({
-		"pswd": "This is the test info",
-		"uid": "This is the uid",
-		"name": "Lorem ipsum dolor sit amet"
-	})
-);
+async function onDeleteAll() {
+  const modelToDelete = await DataStore.query(Users);
+  DataStore.delete(modelToDelete[0]);
 }
 
 ReactDOM.render(
   <BrowserRouter>
     <Nav />
+    <input type="button" value="click" onClick={onQuery} />
+    <input type="button" value="del" onClick={onDeleteAll} />
     <App />
     <Footer />
   </BrowserRouter>,

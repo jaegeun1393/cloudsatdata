@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 
-import Logsign from "./loginNsignup";
+import Login from "./loginNsignup";
 import Home from "./Home";
+import Signup from "./signup";
 
 import './css/App.css';
 
@@ -13,7 +14,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} /> 
-        <Route path="/Logsign" element={<Logsign />}></Route>
+        <Route path="/Login" element={<Login />}></Route>
+        <Route path="/Signup" element={<Signup />}></Route>
       </Routes>
 
   </div>
