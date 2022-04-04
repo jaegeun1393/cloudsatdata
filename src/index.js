@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Amplify from '@aws-amplify/core'
-import { Auth } from '@aws-amplify/auth'
-import awsmobile from './aws-exports'
+import {Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
 import {BrowserRouter} from 'react-router-dom'; 
 
 import App from './App';
@@ -15,8 +14,8 @@ import './css/index.css';
 import { DataStore, Predicates } from '@aws-amplify/datastore';
 import { Users, Post } from './models';
 
-Amplify.configure(awsmobile);
-Auth.configure(awsmobile);
+Amplify.configure(awsconfig);
+Auth.configure(awsconfig);
 
 async function onQuery() {
   const models = await DataStore.query(Users);
