@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {API} from 'aws-amplify';
 import { DataStore } from '@aws-amplify/datastore';
 import { Users } from './models';
@@ -67,6 +67,7 @@ function Signup() {
             <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">Password</label>
             <input type="password" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Password" value={pswd} onInput={e => setpswd(e.target.value)}/>
           </div>
+          <Link to="/Login" className="text-sm text-gray-700 inline-block mt-4 hover:text-indigo-600 hover:underline hover:cursor-pointer transition duration-200">Go back to Login</Link>
           <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300" onClick={()=>redirect(uname, uid, pswd)}>Register</button>
         </div>
       </div>
