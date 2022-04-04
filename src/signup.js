@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Route  } from "react-router-dom";
+import { Navigate  } from "react-router-dom";
 import {API} from 'aws-amplify';
 import { DataStore } from '@aws-amplify/datastore';
 import { Users } from './models';
