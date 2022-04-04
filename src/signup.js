@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {API} from 'aws-amplify';
 import { DataStore } from '@aws-amplify/datastore';
 import { Users } from './models';
@@ -33,13 +33,21 @@ function onCreate(username, id, pswd) {
 		    "pswd": pswd
 	    })
     );
+    return true
   }
 }
 
 function Signup() {
+  const navigate = useNavigate();
   const [uname, setuname] = useState('')
   const [uid, setuid] = useState('')
   const [pswd, setpswd] = useState('')
+
+  function redirect(name, id, pwd) {
+    if(onCreate(name, id, pwd) == true) {
+      navigate('/Login');
+    }
+  }
 
   return (
     <div className="Signup">
@@ -59,7 +67,7 @@ function Signup() {
             <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">Password</label>
             <input type="password" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Password" value={pswd} onInput={e => setpswd(e.target.value)}/>
           </div>
-          <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300" onClick={()=>onCreate(uname, uid, pswd)}>Register</button>
+          <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300" onClick={()=>redirect(uname, uid, pswd)}>Register</button>
         </div>
       </div>
     </div>
