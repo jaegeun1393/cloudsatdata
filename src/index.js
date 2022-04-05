@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Amplify } from 'aws-amplify';
-import { Auth } from '@aws-amplify/auth'
-import aws_exports from './aws-exports';
 import {BrowserRouter} from 'react-router-dom'; 
+import { Amplify, Auth } from 'aws-amplify';
+import aws_exports from './aws-exports';
 
 import App from './App';
 import Nav from './navbar';
@@ -30,6 +29,7 @@ async function onDeleteAll() {
 }
 
 ReactDOM.render(
+  
   <BrowserRouter>
     <Nav />
     <App />

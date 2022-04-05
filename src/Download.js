@@ -2,7 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 
 import './css/App.css';
+import { Storage } from 'aws-amplify';
 function Downloads() {
+
+  async function downoadpdf() {
+    try {
+      await Storage.get("mmt_sat_paper.png", {
+        level: "public",
+        region:'us-east-1',
+        bucket: 'cloudsatdata-storage-b83a98ff73847-staging',
+        progressCallback(progress) {
+          console.log(`Downloaded: ${progress.loaded}/${progress.total}`);
+      }
+      });
+    } catch(error) {
+      alert(error)
+    }
+  
+  }
+
   return (
   <div>
 
@@ -28,7 +46,7 @@ function Downloads() {
                     <p className="text-lg text-gray-500">Share this to everyone!</p>
                     <div className="relative w-full mt-10 space-y-8">
                         <div className="relative">
-                            <a href="#_" className="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Download PDF</a>
+                            <button className="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease" onClick={downoadpdf}>Download PDF</button>
                         </div>
                     </div>
                 </div>
