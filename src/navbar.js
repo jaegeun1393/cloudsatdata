@@ -8,21 +8,14 @@ const sigstate = {
   form: 'login'
 }
 
-function Navbar() {
+function Navbars() {
 
-  const [formState, updateformState] = useState(sigstate)
+  const [formState, updateformState] = useState(sigstate);
 
-  async function ionViewCanEnter() {
-    try {
-        await Auth.currentAuthenticatedUser();
-        updateformState(() => ({ ...formState, form: "confirm" }))
-    } catch {
-        return false;
-    }
-}
+
 
   const { form } = formState
-  ionViewCanEnter();
+  //ionViewCanEnter();
   return (
     <div>
       <header className="navbar-header">
@@ -80,4 +73,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbars;
