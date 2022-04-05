@@ -5,7 +5,7 @@ import { Amplify, Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
 
 import App from './App';
-import Nav from './navbar';
+import Navbar from './navbar';
 import Footer from './footer';
 import reportWebVitals from './reportWebVitals';
 
@@ -44,7 +44,7 @@ async function onDeleteAll() {
 ReactDOM.render(
   
   <BrowserRouter>
-    <Nav />
+    <Navbar />
     <App />
     <Footer />
   </BrowserRouter>,

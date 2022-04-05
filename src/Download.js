@@ -9,8 +9,6 @@ function Downloads() {
     try {
       await Storage.get("mmt_sat_paper.png", {
         level: "public",
-        region:'us-east-1',
-        bucket: 'cloudsatdata-storage-b83a98ff73847-staging',
         progressCallback(progress) {
           console.log(`Downloaded: ${progress.loaded}/${progress.total}`);
       }

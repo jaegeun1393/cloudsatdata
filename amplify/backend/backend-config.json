@@ -51,5 +51,12 @@
         ]
       }
     }
+  },
+  "storage": {
+    "s3cloudsatdatastorageb83a98ff": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
+    }
   }
 }
