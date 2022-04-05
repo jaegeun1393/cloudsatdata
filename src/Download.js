@@ -3,21 +3,16 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import './css/App.css';
 import { Storage } from 'aws-amplify';
+
 function Downloads() {
 
-  async function downoadpdf() {
-    try {
+  const pdffile = () => 
+    async() => {
       await Storage.get("mmt_sat_paper.png", {
         level: "public",
-        progressCallback(progress) {
-          console.log(`Downloaded: ${progress.loaded}/${progress.total}`);
-      }
+        download: true
       });
-    } catch(error) {
-      alert(error)
-    }
-  
-  }
+    } 
 
   return (
   <div>
@@ -44,7 +39,7 @@ function Downloads() {
                     <p className="text-lg text-gray-500">Share this to everyone!</p>
                     <div className="relative w-full mt-10 space-y-8">
                         <div className="relative">
-                            <button className="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease" onClick={downoadpdf}>Download PDF</button>
+                            <a href="https://drive.google.com/file/d/1A4Tgcucr66VSDphkhwaoyvH4iNLkKoQY/view?usp=sharing" className="inline-block w-full px-5 py-4 text-lg font-medium text-center text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 ease">Download PDF</a>
                         </div>
                     </div>
                 </div>
