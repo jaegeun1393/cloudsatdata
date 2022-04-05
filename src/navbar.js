@@ -1,21 +1,9 @@
-import React, { useState, useEffect } from "react";
-import {Auth, Hub} from 'aws-amplify';
+import React from "react";
 import { Link } from "react-router-dom";
 
 import "./css/App.css"
-
-const sigstate = {
-  form: 'login'
-}
-
-function Navbars() {
-
-  const [formState, updateformState] = useState(sigstate);
-
-
-
-  const { form } = formState
-  //ionViewCanEnter();
+function Navibar() {
+  
   return (
     <div>
       <header className="navbar-header">
@@ -46,25 +34,11 @@ function Navbars() {
             </a>
             </nav>
 
-            {
-              form === "login" && (
-                <div className="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
-                <Link to="/Login" className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
-                  Login
-                </Link>
-              </div>
-              )
-            }
-            {
-              form === "confirm" && (
-                <div className="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
-                <Link to="/Login" className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
-                  Sign Out
-                </Link>
-              </div>                
-              )
-            }
-
+            <div className="relative z-10 inline-flex items-center space-x-3 md:ml-5 lg:justify-end">
+              <Link to="/Login" className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
+                Login
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -73,4 +47,4 @@ function Navbars() {
   );
 }
 
-export default Navbars;
+export default Navibar;

@@ -44,6 +44,7 @@ async function onDeleteAll() {
 ReactDOM.render(
   
   <BrowserRouter>
+    <Nav />
     <App />
     <Footer />
   </BrowserRouter>,
