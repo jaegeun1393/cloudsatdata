@@ -17,6 +17,7 @@ class StudentDash extends Component {
       rsname: ""
     }
     this.updatestudent = this.updatestudent.bind(this)
+    this.searchstudent = this.searchstudent.bind(this)
   }
 
   async componentDidMount() {
@@ -26,10 +27,6 @@ class StudentDash extends Component {
     } catch {
       this.setState({ loginstate: false })
      }
-  }
-
-  changesname = (e) => {
-    this.setState({ studentname: e.target.value})
   }
 
   genrand = () => {
@@ -52,16 +49,32 @@ class StudentDash extends Component {
             })
           );
 
-        this.setState({ studentname: ""})
-        this.setState({ sid: ""})
-
-        const models = await DataStore.query(Studentlst);
-console.log(models);
-          }
-
+          this.setState({ studentname: ""})
+          this.setState({ sid: ""})
+        }
       } catch(error) {
-        console.log(error)
+        alert(error)
       }
+  }
+
+  async searchstudent() {
+    try {
+
+      let find = false
+      const models = await DataStore.query(Studentlst);
+      for(let i = 0; i < models.length; i++) {
+        if(Auth.user.attributes.email == models[i].tid) {
+          if(String(this.state.rsid) == String(models[i].sid)) {
+            find = true
+            console.log(models[i]);
+          }
+        }
+      }
+
+      if (find == false) {alert("Enter the sudent's id again.")}
+    } catch(error) {
+      alert(error)
+    }
   }
 
   render() {
@@ -70,7 +83,7 @@ console.log(models);
     <div>
       <div className='py-3'>
         <h4 className="text-sm font-bold text-indigo-600">Hi Andrei,</h4>
-        <h1 className="text-4xl font-bold text-indigo-900 mt-">Welcome to the Student management!</h1>
+        <h1 className="text-4xl font-bold text-indigo-900 mt-">Student management!</h1>
       </div>
 
       <div className="flex space-x-4 px-4">
@@ -81,7 +94,7 @@ console.log(models);
         <div className="py-12 p-10 bg-white rounded-xl">
           <div className="mb-6 flex flex-1 items-center">
             <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">Student Name</label>
-            <input name="studentname" type="text" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="First and Last Name" onChange={this.changesname} defaultValue={this.state.studentname}/>
+            <input name="studentname" type="text" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="First and Last Name" onChange={e => this.setState({ studentname: e.target.value})} defaultValue={this.state.studentname}/>
           </div>
           <div className="mb-6 flex flex-1 items-center">
             <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">Student ID</label>
@@ -107,12 +120,16 @@ console.log(models);
           </div>
           <div className="mb-6 flex flex-1 items-center">
             <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">Student ID</label>
-            <input name="studentid" type="number" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Student ID" defaultValue={this.state.rsid}/>
-            <button className="w-100 text-indigo-50 font-bold bg-indigo-600 py-2 px-3 rounded-md hover:bg-indigo-500 transition duration-300">Search</button>
+            <input name="rsid" type="number" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Student ID" defaultValue={this.state.rsid} onChange={e => this.setState({ rsid: e.target.value})}/>
+            <button onClick={this.searchstudent} className="w-100 text-indigo-50 font-bold bg-indigo-600 py-2 px-3 rounded-md hover:bg-indigo-500 transition duration-300">Search</button>
           </div>
         </div>
 
         </div>
+
+      <div className='studentlst'>
+       
+      </div>
       </div>
 
     </div>
