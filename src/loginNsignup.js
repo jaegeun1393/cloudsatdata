@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {Auth, Hub} from 'aws-amplify';
 
 import './css/App.css';
@@ -10,6 +10,7 @@ const initialsignset = {
 
 function Login() {
   const [formState, updateformState] = useState(initialsignset)
+  const navigate = useNavigate();
   
   function onChange(e) {
     e.persist()
@@ -19,7 +20,7 @@ function Login() {
   async function login() {
     const { userid, password } = formState
     let log = await Auth.signIn(userid, password)
-    console.log(log);
+    navigate('/');
   }
 
   return (
