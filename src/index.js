@@ -29,7 +29,17 @@ Storage: {
 }
 });
 Auth.configure(config);
-API.configure(config);
+
+API.configure({
+  API: {
+    endpoints: [
+        {
+            name: "cloudsatapi",
+            endpoint: "https://7jcyii03d3.execute-api.us-east-1.amazonaws.com/staging"
+        }
+    ]
+}
+});
 
 async function onQuery() {
   const models = await DataStore.query(Usersat);

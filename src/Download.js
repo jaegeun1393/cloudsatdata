@@ -49,48 +49,48 @@ function Downloads() {
 
 </section>
 
-<div class="full-row flex full-col gap-5 items-center justify-center bg-white py-40">
+<div className="full-row flex full-col gap-5 items-center justify-center bg-white py-40">
 
-  <card class="border-gray-300 border-2 rounded-xl w-[30rem] py-7 px-5">
-    <div class="grid grid-cols-6 gap-3">
+  <card className="border-gray-300 border-2 rounded-xl w-[30rem] py-7 px-5">
+    <div className="grid grid-cols-6 gap-3">
       
-      <div class="col-span-2">
+      <div className="col-span-2">
         <img src="https://events.duolingo.com/images/why_global.svg" />
       </div>
 
-      <div class="col-span-4">
-        <p class="text-gray-700 font-bold"> Did you know our platform is 100% FREE? </p>
-        <p class="text-gray-500 mt-4"> Yes it is! We are offering Unlimited spaces, and uploading. </p>
+      <div className="col-span-4">
+        <p className="text-gray-700 font-bold"> Did you know our platform is 100% FREE? </p>
+        <p className="text-gray-500 mt-4"> Yes it is! We are offering Unlimited spaces, and uploading. </p>
       </div>
 
     </div>
   </card>
 
-  <card class="border-gray-300 border-2 rounded-xl w-[30rem] py-7 px-5">
-    <div class="grid grid-cols-6 gap-3">
+  <card className="border-gray-300 border-2 rounded-xl w-[30rem] py-7 px-5">
+    <div className="grid grid-cols-6 gap-3">
       
-      <div class="col-span-4">
-        <p class="text-gray-700 font-bold"> Create an impact </p>
-        <p class="text-gray-500 mt-4"> Reduce the waiting time to get the response back from the teacher! </p>
+      <div className="col-span-4">
+        <p className="text-gray-700 font-bold"> Create an impact </p>
+        <p className="text-gray-500 mt-4"> Reduce the waiting time to get the response back from the teacher! </p>
       </div>
 
-      <div class="col-span-2">
+      <div className="col-span-2">
         <img src="https://events.duolingo.com/images/why_impact.svg" />
       </div>
 
     </div>
   </card>
 
-  <card class="border-gray-300 border-2 rounded-xl w-[30rem] py-7 px-5">
-    <div class="grid grid-cols-6 gap-3">
+  <card className="border-gray-300 border-2 rounded-xl w-[30rem] py-7 px-5">
+    <div className="grid grid-cols-6 gap-3">
       
-      <div class="col-span-2">
+      <div className="col-span-2">
         <img src="https://events.duolingo.com/images/why_access.svg" />
       </div>
 
-      <div class="col-span-4">
-        <p class="text-gray-700 font-bold"> High Security Services </p>
-        <p class="text-gray-500 mt-4"> Enjoy to access our service wit the strong security service! </p>
+      <div className="col-span-4">
+        <p className="text-gray-700 font-bold"> High Security Services </p>
+        <p className="text-gray-500 mt-4"> Enjoy to access our service wit the strong security service! </p>
       </div>
 
     </div>
