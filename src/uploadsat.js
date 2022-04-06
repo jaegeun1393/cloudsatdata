@@ -45,7 +45,6 @@ class Uploadsat extends Component {
                             <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
                                 <div className="h-full w-full text-center flex flex-col items-center justify-center items-center  ">
                                     <div className="flex flex-auto max-h-48 w-2/5 mx-auto -mt-10">
-                                    <img className="has-mask h-36 object-center" src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg" alt="freepik image" />
                                     </div>
                                     <p className="pointer-none text-gray-500 "><span className="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" className="text-blue-600 hover:underline">select a file</a> from your computer</p>
                                 </div>

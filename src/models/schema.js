@@ -1,5 +1,82 @@
 export const schema = {
     "models": {
+        "Studentlst": {
+            "name": "Studentlst",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "sid": {
+                    "name": "sid",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Text"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "tid": {
+                    "name": "tid",
+                    "isArray": false,
+                    "type": {
+                        "enum": "Text"
+                    },
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "Studentlsts",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Usersat": {
             "name": "Usersat",
             "fields": {
@@ -10,8 +87,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "username": {
-                    "name": "username",
+                "authid": {
+                    "name": "authid",
                     "isArray": false,
                     "type": {
                         "enum": "Text"
@@ -19,8 +96,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "satid": {
-                    "name": "satid",
+                "tid": {
+                    "name": "tid",
                     "isArray": false,
                     "type": {
                         "enum": "Text"
@@ -28,8 +105,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "userid": {
-                    "name": "userid",
+                "name": {
+                    "name": "name",
                     "isArray": false,
                     "type": {
                         "enum": "Text"
@@ -89,5 +166,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "6391fb7bd1babc04035c3577cb5a6dc1"
+    "version": "256ec2cda32f51f0211f06da48306533"
 };

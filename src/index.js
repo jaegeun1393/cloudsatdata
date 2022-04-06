@@ -5,7 +5,6 @@ import Amplify, { Auth, API } from 'aws-amplify';
 import config from './aws-exports';
 
 import App from './App';
-import Nav from './navbar';
 import Footer from './footer';
 import reportWebVitals from './reportWebVitals';
 
@@ -26,6 +25,9 @@ Storage: {
         bucket: 'cloudsatdata-storage-b83a98ff73847-staging',
         region: 'us-east-1', //OPTIONAL -  Amazon service region
     }
+},
+API: {
+  graphql_endpoint: 'https://cs2fkonjpvf6lnnuios6alyo4u.appsync-api.us-east-1.amazonaws.com/graphql'
 }
 });
 Auth.configure(config);
@@ -53,9 +55,7 @@ async function onDeleteAll() {
 }
 
 ReactDOM.render(
-  
   <BrowserRouter>
-    <Nav />
     <App />
     <Footer />
   </BrowserRouter>,

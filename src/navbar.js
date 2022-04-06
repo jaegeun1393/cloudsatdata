@@ -23,7 +23,6 @@ class Navibar extends Component {
   }
 
   render() {
-
   return (
     <div>
       <header className="navbar-header">
@@ -37,13 +36,9 @@ class Navibar extends Component {
               <span className="block">Upload</span>
             </Link>
             
-            <a href="#_" className="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900" x-data="{ hover: false }">
-                <span className="block">Submit</span>
-            </a>
-            
-            <a href="#_" className="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900" x-data="{ hover: false }">
+            <Link to={"/viewscore"} className="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900" x-data="{ hover: false }">
                 <span className="block">View</span>
-            </a>
+            </Link>
 
             <Link to={"/downloads"} className="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900" x-data="{ hover: false }">
                 <span className="block">Download</span>
@@ -68,7 +63,10 @@ class Navibar extends Component {
                 <Link to={"/signout"} className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
                   Sign Out
                 </Link>
-              </div>                
+                <Link to={"/userdashboard"} className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none">
+                  Dash Board
+                </Link>
+              </div>         
               )
             }
 

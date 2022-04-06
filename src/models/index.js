@@ -6,9 +6,10 @@ const Text = {
   "VALUE": "VALUE"
 };
 
-const { Usersat } = initSchema(schema);
+const { Studentlst, Usersat } = initSchema(schema);
 
 export {
+  Studentlst,
   Usersat,
   Text
 };

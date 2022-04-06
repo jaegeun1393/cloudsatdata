@@ -1,10 +1,18 @@
-enum Text {
-  VALUE
+type Studentlst @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  sid: Text
+  tid: Text
 }
 
 type Usersat @model @auth(rules: [{allow: public}]) {
   id: ID!
-  username: Text
-  satid: Text
-  userid: Text
+  authid: Text
+  tid: Text
+  name: Text
 }
+
+enum Text {
+  VALUE
+}
+ 

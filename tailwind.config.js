@@ -6,7 +6,8 @@ module.exports = {
     "./src/Home.js",
     "./src/loginNsignup.js",
     "./src/Download.js",
-    "./src/uploadsat.js"
+    "./src/uploadsat.js",
+    "./src/dashboard.js"
   ],
   theme: {
     extend: {},

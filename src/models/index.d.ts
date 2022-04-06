@@ -6,15 +6,30 @@ export enum Text {
 
 
 
+type StudentlstMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type UsersatMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
+export declare class Studentlst {
+  readonly id: string;
+  readonly name?: string | null;
+  readonly sid?: Text | keyof typeof Text | null;
+  readonly tid?: Text | keyof typeof Text | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Studentlst, StudentlstMetaData>);
+  static copyOf(source: Studentlst, mutator: (draft: MutableModel<Studentlst, StudentlstMetaData>) => MutableModel<Studentlst, StudentlstMetaData> | void): Studentlst;
+}
+
 export declare class Usersat {
   readonly id: string;
-  readonly username?: Text | keyof typeof Text | null;
-  readonly satid?: Text | keyof typeof Text | null;
-  readonly userid?: Text | keyof typeof Text | null;
+  readonly authid?: Text | keyof typeof Text | null;
+  readonly tid?: Text | keyof typeof Text | null;
+  readonly name?: Text | keyof typeof Text | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Usersat, UsersatMetaData>);
