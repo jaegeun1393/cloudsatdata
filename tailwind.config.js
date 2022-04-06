@@ -5,7 +5,8 @@ module.exports = {
     "./src/footer.js",
     "./src/Home.js",
     "./src/loginNsignup.js",
-    "./src/Download.js"
+    "./src/Download.js",
+    "./src/uploadsat.js"
   ],
   theme: {
     extend: {},
