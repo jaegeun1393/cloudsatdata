@@ -12,7 +12,7 @@ import './css/App.css';
 import { API } from 'aws-amplify';
 
 function App() {
-
+  document.title = "Cloud. SAT";
   useEffect(() => {
     const getData = async () => {
       const data = await API.get('cloudsatapi', '/users/')
