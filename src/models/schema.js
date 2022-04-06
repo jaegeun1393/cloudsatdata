@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Users": {
-            "name": "Users",
+        "Usersat": {
+            "name": "Usersat",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,22 +10,26 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "name": {
-                    "name": "name",
+                "username": {
+                    "name": "username",
                     "isArray": false,
-                    "type": "String",
+                    "type": {
+                        "enum": "Text"
+                    },
                     "isRequired": false,
                     "attributes": []
                 },
-                "LoginID": {
-                    "name": "LoginID",
+                "satid": {
+                    "name": "satid",
                     "isArray": false,
-                    "type": "String",
+                    "type": {
+                        "enum": "Text"
+                    },
                     "isRequired": false,
                     "attributes": []
                 },
-                "pswd": {
-                    "name": "pswd",
+                "userid": {
+                    "name": "userid",
                     "isArray": false,
                     "type": {
                         "enum": "Text"
@@ -51,7 +55,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Users",
+            "pluralName": "Usersats",
             "attributes": [
                 {
                     "type": "model",
@@ -85,5 +89,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "2d3859e0c33a3dcbe1e93b1c5830ed79"
+    "version": "6391fb7bd1babc04035c3577cb5a6dc1"
 };

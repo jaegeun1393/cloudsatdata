@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Login from "./loginNsignup";
 import Home from "./Home";
@@ -9,8 +9,17 @@ import Uploadsat from "./uploadsat";
 import Signout from "./signout";
 
 import './css/App.css';
+import { API } from 'aws-amplify';
 
 function App() {
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await API.get('cloudsatapi', '/users/')
+      console.log(data);
+    }
+    getData()
+  }, [])
 
   return (
     <div>

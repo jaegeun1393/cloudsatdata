@@ -6,17 +6,17 @@ export enum Text {
 
 
 
-type UsersMetaData = {
+type UsersatMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
-export declare class Users {
+export declare class Usersat {
   readonly id: string;
-  readonly name?: string | null;
-  readonly LoginID?: string | null;
-  readonly pswd?: Text | keyof typeof Text | null;
+  readonly username?: Text | keyof typeof Text | null;
+  readonly satid?: Text | keyof typeof Text | null;
+  readonly userid?: Text | keyof typeof Text | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  constructor(init: ModelInit<Users, UsersMetaData>);
-  static copyOf(source: Users, mutator: (draft: MutableModel<Users, UsersMetaData>) => MutableModel<Users, UsersMetaData> | void): Users;
+  constructor(init: ModelInit<Usersat, UsersatMetaData>);
+  static copyOf(source: Usersat, mutator: (draft: MutableModel<Usersat, UsersatMetaData>) => MutableModel<Usersat, UsersatMetaData> | void): Usersat;
 }

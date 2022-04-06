@@ -6,9 +6,9 @@ const Text = {
   "VALUE": "VALUE"
 };
 
-const { Users } = initSchema(schema);
+const { Usersat } = initSchema(schema);
 
 export {
-  Users,
+  Usersat,
   Text
 };

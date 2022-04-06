@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'; 
-import Amplify, { Auth, Storage } from 'aws-amplify';
-import aws_exports from './aws-exports';
+import Amplify, { Auth, API } from 'aws-amplify';
+import config from './aws-exports';
 
 import App from './App';
 import Nav from './navbar';
@@ -11,8 +11,8 @@ import reportWebVitals from './reportWebVitals';
 
 import './css/index.css';
 
-import { DataStore, Predicates } from '@aws-amplify/datastore';
-import { Users, Post } from './models';
+import { DataStore } from '@aws-amplify/datastore';
+import { Usersat } from './models';
 
 Amplify.configure({
   Auth: {
@@ -28,16 +28,17 @@ Storage: {
     }
 }
 });
-Auth.configure(aws_exports);
+Auth.configure(config);
+API.configure(config);
 
 async function onQuery() {
-  const models = await DataStore.query(Users);
+  const models = await DataStore.query(Usersat);
   console.log(models);
 }
 
 
 async function onDeleteAll() {
-  const modelToDelete = await DataStore.query(Users);
+  const modelToDelete = await DataStore.query(Usersat);
   DataStore.delete(modelToDelete[0]);
 }
 

@@ -1,27 +1,19 @@
 import awsgi
-import boto3
 import os
-
-from flask_cors import CORS
-from flask import Flask, jsonify, request
 from uuid import uuid4
+from flask import Flask, jsonify, request
+from flask_cors import CORS
 
-BASE_ROUTE = "/users"
-TABLE = os.environ.get("STORAGE_CLOUDSAT_NAME")
+import boto3
 
-client = boto3.client('cloudsatdb')
 app = Flask(__name__)
 CORS(app)
 
-@app.route(BASE_ROUTE, methods=['POST'])
-def create_song():
-    request_json = request.get_json()
-    client.put_item(TableName=TABLE, Item={
-        'id': {'S': request_json.get('name')}
-    })
-    return jsonify(message="item created")
+client = boto3.client('cloudsatdata')
+BASE_ROUTE = "/users"
+TABLE = os.environ.get("cloudsatdata-storage-b83a98ff73847-staging")
 
-@app.route(BASE_ROUTE, methods=['GET'])
+@app.route(BASE_ROUTE + '/', methods=['GET'])
 def list_users():
     return jsonify(message="hello world")
 

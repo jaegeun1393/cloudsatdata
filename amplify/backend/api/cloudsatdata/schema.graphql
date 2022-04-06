@@ -1,0 +1,10 @@
+enum Text {
+  VALUE
+}
+
+type Usersat @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: Text
+  satid: Text
+  userid: Text
+}
