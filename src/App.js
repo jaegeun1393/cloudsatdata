@@ -6,6 +6,7 @@ import Home from "./Home";
 import Signup from "./signup";
 import Downloads from "./Download";
 import Uploadsat from "./uploadsat";
+import Signout from "./signout";
 
 import './css/App.css';
 
@@ -19,7 +20,9 @@ function App() {
         <Route path="/downloads" element={<Downloads />}></Route>
         <Route path="/uploadsat" element={<Uploadsat />}></Route>
         <Route path="/Login" element={<Login />}></Route>
+
         <Route path="/Signup" element={<Signup />}></Route>
+        <Route path="/signout" element={<Signout />}></Route>
       </Routes>
 
   </div>

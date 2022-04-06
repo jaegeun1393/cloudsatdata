@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import {Auth} from 'aws-amplify';
 
 
@@ -11,7 +11,7 @@ class Uploadsat extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginstate: false
+      loginstate: ""
     };
   }
 
@@ -25,6 +25,7 @@ class Uploadsat extends Component {
   }
 
   render() {
+    if (this.state.loginstate === false) return <Navigate to="/Login" />
   return (
     <div>
       { this.state.loginstate === true && (
