@@ -14,7 +14,8 @@ class StudentDash extends Component {
       sid: "",
 
       rsid: "",
-      rsname: ""
+      rsname: "",
+      rslst: []
     }
     this.updatestudent = this.updatestudent.bind(this)
     this.searchstudent = this.searchstudent.bind(this)
@@ -59,14 +60,14 @@ class StudentDash extends Component {
 
   async searchstudent() {
     try {
-
+      this.setState({ rslst: []})
       let find = false
       const models = await DataStore.query(Studentlst);
       for(let i = 0; i < models.length; i++) {
         if(Auth.user.attributes.email == models[i].tid) {
           if(String(this.state.rsid) == String(models[i].sid)) {
             find = true
-            console.log(models[i]);
+            this.state.rslst.push(models[i].name);
           }
         }
       }
@@ -128,7 +129,7 @@ class StudentDash extends Component {
         </div>
 
       <div className='studentlst'>
-       
+       {this.state.rslst}
       </div>
       </div>
 

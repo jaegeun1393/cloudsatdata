@@ -12,7 +12,24 @@ import './css/index.css';
 
 import { DataStore } from '@aws-amplify/datastore';
 import { Usersat } from './models';
-Amplify.configure(config);
+Amplify.configure(config,{
+  Auth: {
+    identityPoolId: 'us-east-1:0accfe82-27bc-4efe-a870-67f0443ba3a7', //REQUIRED - Amazon Cognito Identity Pool ID
+    region: 'us-east-1', // REQUIRED - Amazon Cognito Region
+    userPoolId: 'us-east-1_WyWx1roqn', //OPTIONAL - Amazon Cognito User Pool ID
+    userPoolWebClientId: '1o849n4vrrb878cu8ra2fhhv9q', //OPTIONAL - Amazon Cognito Web Client ID
+},
+  Storage: {
+    AWSS3: {
+        bucket: 'cloudsatdata-storage-b83a98ff73847-staging',
+        region: 'us-east-1', //OPTIONAL -  Amazon service region
+    }
+},
+  API: {
+  graphql_endpoint: 'https://cs2fkonjpvf6lnnuios6alyo4u.appsync-api.us-east-1.amazonaws.com/graphql'
+}
+}
+  );
 Auth.configure(config);
 
 API.configure({
