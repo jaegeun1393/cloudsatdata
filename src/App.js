@@ -20,7 +20,7 @@ function App() {
   document.title = "Cloud. SAT";
   useEffect(() => {
     const getData = async () => {
-      const data = await API.get('cloudsatapi', '/users/')
+      const data = await API.get('cloudsatapi', '/users')
       console.log(data);
     }
     getData()
