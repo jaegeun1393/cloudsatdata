@@ -72,7 +72,14 @@ class StudentDash extends Component {
         }
       }
 
-      if (find == false) {alert("Enter the sudent's id again.")}
+      if (find == false) {alert("Enter the sudent's id again.")} else {
+        var main = document.getElementById("studentlst");
+        for(let i = 0; i < this.state.rslst.length; i++) {
+          var ele = document.createElement("div");
+          ele.innerText = this.state.rslst[i];
+          main.appendChild(ele);
+        }
+      }
     } catch(error) {
       alert(error)
     }
@@ -128,7 +135,7 @@ class StudentDash extends Component {
 
         </div>
 
-      <div className='studentlst'>
+      <div id='studentlst'>
        {this.state.rslst}
       </div>
       </div>

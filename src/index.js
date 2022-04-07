@@ -12,7 +12,7 @@ import './css/index.css';
 
 import { DataStore } from '@aws-amplify/datastore';
 import { Usersat } from './models';
-Amplify.configure(config,{
+Amplify.configure({
   Auth: {
     identityPoolId: 'us-east-1:0accfe82-27bc-4efe-a870-67f0443ba3a7', //REQUIRED - Amazon Cognito Identity Pool ID
     region: 'us-east-1', // REQUIRED - Amazon Cognito Region
