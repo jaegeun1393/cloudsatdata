@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
-
+import Amplify, { Auth, API } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+Auth.configure(awsconfig);
 import Nav from './navbar';
 import Login from "./loginNsignup";
 import Home from "./Home";
