@@ -1,1 +1,1 @@
-{ "path": "/users", "httpMethod": "GET", "queryStringParameters": ""}
+{ "httpMethod": "GET", "path": "/users", "queryStringParameters": "" }

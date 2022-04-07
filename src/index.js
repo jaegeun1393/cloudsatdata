@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'; 
-import {Amplify, Auth, API } from 'aws-amplify';
-import config from './aws-exports';
+import Amplify, { Auth, API } from 'aws-amplify';
+import awsconfig from './aws-exports';
 
 import App from './App';
 import Footer from './footer';
@@ -12,8 +12,8 @@ import './css/index.css';
 
 import { DataStore } from '@aws-amplify/datastore';
 import { Usersat } from './models';
-Amplify.configure(config);
-Auth.configure(config);
+Amplify.configure(awsconfig);
+Auth.configure(awsconfig);
 
 API.configure({
   API: {
