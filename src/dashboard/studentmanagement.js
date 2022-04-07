@@ -74,7 +74,10 @@ class StudentDash extends Component {
 
       if (find == false) {alert("Enter the sudent's id again.")} else {
         var main = document.getElementById("studentlst");
-        main.className = "w-full"
+        var undermain = document.createElement("div");
+        undermain.id = "studentview";
+        undermain.className = "w-full";
+        main.appendChild(undermain);
         for(let i = 0; i < this.state.rslst.length; i++) {
           var ele = document.createElement("div");
           ele.className = "border-2 border-black-500 rounded-lg font-bold text-black px-4 py-3 transition duration-300";
@@ -89,9 +92,9 @@ class StudentDash extends Component {
           rbtn.className = "btn float-right bg-blue-500 rounded-lg font-bold px-4 py-1 transition text-white text-right";
           rbtn.innerText = "Remove";
 
-          main.appendChild(ele);
-          main.appendChild(lview);
-          main.appendChild(rbtn);
+          undermain.appendChild(ele);
+          undermain.appendChild(lview);
+          undermain.appendChild(rbtn);
         }
       }
     } catch(error) {
@@ -100,10 +103,14 @@ class StudentDash extends Component {
   }
 
   async removestudent() {
-    const modelToDelete = await DataStore.query(Studentlst, c =>
-      c.sid("eq", String(this.state.vsid))
-    );
-    console.log(modelToDelete);
+    const models = await DataStore.query(Studentlst);
+    for(let i = 0; i < models.length; i++) {
+      if(String(this.state.vsid) == String(models[i].sid)) {
+        DataStore.delete(models[i]);
+        const elem = document.getElementById("studentview");
+        elem.remove();
+      }
+    }
   }
 
   render() {
@@ -139,7 +146,7 @@ class StudentDash extends Component {
       <div className="justify-between rounded-xl mt-4 p-4 bg-white shadow-lg">
       <h1 className="text-xl font-bold text-gray-800 mt-4">Search students</h1>
         <div className="flex flex-col justify-between space-x-8">
-        <div className="py-12 p-10 bg-white rounded-xl">
+        <div className="py-10 p-10 bg-white rounded-xl">
         <div className="mb-6 flex flex-1 items-center">
             <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">Student ID</label>
             <input name="studentid" type="number" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Student ID" onChange={e => this.setState({ vsid: e.target.value})}/>

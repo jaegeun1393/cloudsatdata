@@ -32,8 +32,8 @@ class Dashboard extends Component {
 
 
 <main className="flex w-full h-screen">
-<aside className="w-80 h-screen w-fulll hidden sm:block">
-  <div className="flex flex-col justify-between h-screen p-4">
+<aside className="h-screen w-fulll hidden sm:block">
+  <div className="flex flex-col w-100 justify-between h-screen px-4">
       <div className="text-sm">
         <div className="items-center mt-2 justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none cursor-pointer">Generate the SAT</div>
         <Link to={`${pathname}/StudentDash`} className="items-center mt-2 justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none cursor-pointer">SAT management</Link>
