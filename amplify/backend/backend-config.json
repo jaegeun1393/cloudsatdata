@@ -1,27 +1,6 @@
 {
-  "function": {
-    "usermanagement": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
-    }
-  },
+  "function": {},
   "api": {
-    "cloudsatapi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "usermanagement",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    },
     "cloudsatdata": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",

@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'; 
-import Amplify, { Auth, API } from 'aws-amplify';
+import Amplify from '@aws-amplify/core'
+import { Auth } from '@aws-amplify/auth'
+import { API } from 'aws-amplify';
 import awsconfig from './aws-exports';
 
 import App from './App';
@@ -13,6 +15,8 @@ import './css/index.css';
 import { DataStore } from '@aws-amplify/datastore';
 import { Usersat } from './models';
 Amplify.configure(awsconfig);
+Amplify.Logger.LOG_LEVEL = 'DEBUG';
+
 Auth.configure(awsconfig);
 API.configure(awsconfig);
 

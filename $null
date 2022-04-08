@@ -1,0 +1,6 @@
+npm ERR! code ELSPROBLEMS
+npm ERR! invalid: react@18.0.0 C:\Users\Intel\Desktop\cloudsatdata\node_modules\react
+npm ERR! invalid: react-dom@18.0.0 C:\Users\Intel\Desktop\cloudsatdata\node_modules\react-dom
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\Intel\AppData\Local\npm-cache\_logs\2022-04-08T00_25_48_987Z-debug-0.log

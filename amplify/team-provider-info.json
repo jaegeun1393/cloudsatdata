@@ -15,12 +15,6 @@
       "auth": {
         "cloudsatdatafaee2b11": {},
         "cloudsatdata": {}
-      },
-      "function": {
-        "usermanagement": {
-          "deploymentBucketName": "amplify-amplifyab8a2ec6fec94-staging-73847-deployment",
-          "s3Key": "amplify-builds/usermanagement-6e5553724e414848642b-build.zip"
-        }
       }
     }
   }
