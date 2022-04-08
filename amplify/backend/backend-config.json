@@ -1,5 +1,36 @@
 {
-  "function": {},
+  "function": {
+    "satgradingapi": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "cloudsatdata",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        },
+        {
+          "category": "auth",
+          "resourceName": "cloudsatdata",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "s3cloudsatdatastorageb83a98ff",
+          "attributes": [
+            "BucketName"
+          ]
+        }
+      ]
+    }
+  },
   "api": {
     "cloudsatdata": {
       "service": "AppSync",
@@ -20,6 +51,20 @@
           ]
         }
       }
+    },
+    "satgraingapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "satgradingapi",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "auth": {

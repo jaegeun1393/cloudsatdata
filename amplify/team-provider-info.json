@@ -15,6 +15,12 @@
       "auth": {
         "cloudsatdatafaee2b11": {},
         "cloudsatdata": {}
+      },
+      "function": {
+        "satgradingapi": {
+          "deploymentBucketName": "amplify-amplifyab8a2ec6fec94-staging-73847-deployment",
+          "s3Key": "amplify-builds/satgradingapi-7a666d584b4e61477774-build.zip"
+        }
       }
     }
   }
