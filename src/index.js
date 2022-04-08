@@ -14,17 +14,7 @@ import { DataStore } from '@aws-amplify/datastore';
 import { Usersat } from './models';
 Amplify.configure(awsconfig);
 Auth.configure(awsconfig);
-
-API.configure({
-  API: {
-    endpoints: [
-        {
-            name: "cloudsatapi",
-            endpoint: "https://7jcyii03d3.execute-api.us-east-1.amazonaws.com/staging"
-        }
-    ]
-}
-});
+API.configure(awsconfig);
 
 async function onQuery() {
   const models = await DataStore.query(Usersat);
@@ -69,4 +59,13 @@ reportWebVitals();
 //   API: {
 //   graphql_endpoint: 'https://cs2fkonjpvf6lnnuios6alyo4u.appsync-api.us-east-1.amazonaws.com/graphql'
 // }
+// }
+
+// API: {
+//   endpoints: [
+//       {
+//           name: "cloudsatapi",
+//           endpoint: "https://7jcyii03d3.execute-api.us-east-1.amazonaws.com/staging"
+//       }
+//   ]
 // }
