@@ -29,16 +29,17 @@ Auth.configure({
     }
 },
   API: {
-  graphql_endpoint: 'https://cs2fkonjpvf6lnnuios6alyo4u.appsync-api.us-east-1.amazonaws.com/graphql',
+  graphql_endpoint: 'https://cs2fkonjpvf6lnnuios6alyo4u.appsync-api.us-east-1.amazonaws.com/graphql'
+}
+});
+API.configure({
   endpoints: [
     {
       "name": "satgraingapi",
       "endpoint": "https://qgi9byeqif.execute-api.us-east-1.amazonaws.com/staging"    
     }
   ]
-}
 });
-API.configure(awsconfig);
 
 async function onQuery() {
   const models = await DataStore.query(Usersat);
