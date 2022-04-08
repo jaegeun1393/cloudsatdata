@@ -19,7 +19,7 @@
       "function": {
         "satgradingapi": {
           "deploymentBucketName": "amplify-amplifyab8a2ec6fec94-staging-73847-deployment",
-          "s3Key": "amplify-builds/satgradingapi-7a666d584b4e61477774-build.zip"
+          "s3Key": "amplify-builds/satgradingapi-62752b6436742b6c4b71-build.zip"
         }
       }
     }
