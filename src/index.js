@@ -15,7 +15,7 @@ import './css/index.css';
 import { DataStore } from '@aws-amplify/datastore';
 import { Usersat } from './models';
 Amplify.configure(awsconfig);
-Amplify.Logger.LOG_LEVEL = 'DEBUG';
+//Amplify.Logger.LOG_LEVEL = 'DEBUG';
 
 Auth.configure(awsconfig);
 API.configure(awsconfig);
