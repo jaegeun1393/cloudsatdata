@@ -3,7 +3,7 @@
   "paths": {
     "/satgrading": {
       "name": "/satgrading",
-      "lambdaFunction": "satgradingapi",
+      "lambdaFunction": "pythongrading",
       "permissions": {
         "setting": "open"
       }

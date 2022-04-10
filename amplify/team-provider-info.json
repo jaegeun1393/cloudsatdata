@@ -16,9 +16,9 @@
         "cloudsatdata": {}
       },
       "function": {
-        "satgradingapi": {
+        "pythongrading": {
           "deploymentBucketName": "amplify-amplifyab8a2ec6fec94-staging-73847-deployment",
-          "s3Key": "amplify-builds/satgradingapi-62752b6436742b6c4b71-build.zip"
+          "s3Key": "amplify-builds/pythongrading-3648526e314a746f4e31-build.zip"
         }
       }
     }

@@ -2,9 +2,7 @@
   "permissions": {
     "api": {
       "cloudsatdata": [
-        "Query",
-        "Mutation",
-        "Subscription"
+        "Query"
       ]
     },
     "auth": {

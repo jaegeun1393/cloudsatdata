@@ -1,6 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
     "function": {
-        "satgradingapi": {
+        "pythongrading": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -13,7 +13,7 @@ export type AmplifyDependentResourcesAttributes = {
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         },
-        "satgraingapi": {
+        "satgrading": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"

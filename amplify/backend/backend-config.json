@@ -1,6 +1,6 @@
 {
   "function": {
-    "satgradingapi": {
+    "pythongrading": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
@@ -52,13 +52,13 @@
         }
       }
     },
-    "satgraingapi": {
+    "satgrading": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "satgradingapi",
+          "resourceName": "pythongrading",
           "attributes": [
             "Name",
             "Arn"

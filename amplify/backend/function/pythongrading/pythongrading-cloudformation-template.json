@@ -67,12 +67,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "satgradingapi",
+            "pythongrading",
             {
               "Fn::Join": [
                 "",
                 [
-                  "satgradingapi",
+                  "pythongrading",
                   "-",
                   {
                     "Ref": "env"
@@ -176,12 +176,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "cloudsatdataLambdaRole4989e2a9",
+            "cloudsatdataLambdaRole149f0de0",
             {
               "Fn::Join": [
                 "",
                 [
-                  "cloudsatdataLambdaRole4989e2a9",
+                  "cloudsatdataLambdaRole149f0de0",
                   "-",
                   {
                     "Ref": "env"
@@ -290,46 +290,6 @@
                         "Ref": "apicloudsatdataGraphQLAPIIdOutput"
                       },
                       "/types/Query/*"
-                    ]
-                  ]
-                },
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:aws:appsync:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":",
-                      {
-                        "Ref": "AWS::AccountId"
-                      },
-                      ":apis/",
-                      {
-                        "Ref": "apicloudsatdataGraphQLAPIIdOutput"
-                      },
-                      "/types/Mutation/*"
-                    ]
-                  ]
-                },
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:aws:appsync:",
-                      {
-                        "Ref": "AWS::Region"
-                      },
-                      ":",
-                      {
-                        "Ref": "AWS::AccountId"
-                      },
-                      ":apis/",
-                      {
-                        "Ref": "apicloudsatdataGraphQLAPIIdOutput"
-                      },
-                      "/types/Subscription/*"
                     ]
                   ]
                 }
