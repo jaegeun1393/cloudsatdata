@@ -48,6 +48,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.4",
     "postcss": "^8.4.12",
+    "serverless-plugin-common-excludes": "^4.0.0",
     "tailwindcss": "^3.0.23"
   }
 }

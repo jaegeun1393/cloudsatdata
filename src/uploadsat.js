@@ -15,6 +15,7 @@ class Uploadsat extends Component {
       profileImg:'https://static.thenounproject.com/png/643663-200.png'
     };
     this.imageHandler = this.imageHandler.bind(this)
+    this.uploadfile = this.uploadfile.bind(this)
   }
 
   imageHandler = (e) => {
@@ -28,7 +29,7 @@ class Uploadsat extends Component {
   };
 
   async uploadfile() {
-    const data = await API.get('satgrading', '/satgrading/')
+    const data = await API.post('gradubgsat', '/gradingsat', {body: {img: this.state.profileImg} })
     console.log(data);
   }
 
@@ -71,11 +72,12 @@ class Uploadsat extends Component {
                         </div>
                     </div>
                             <p className="text-sm text-gray-500">
-                                <span>File type: Jpg, and png</span>
+                                <span>File type: jpg, png ONLY</span>
                             </p>
                     <div>
                         <button type="button" className="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide
-                                    font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300">
+                                    font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
+                                    onClick={this.uploadfile}>
                         Upload
                     </button>
                     </div>

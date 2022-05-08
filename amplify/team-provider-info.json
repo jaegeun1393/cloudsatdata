@@ -14,12 +14,6 @@
     "categories": {
       "auth": {
         "cloudsatdata": {}
-      },
-      "function": {
-        "pythongrading": {
-          "deploymentBucketName": "amplify-amplifyab8a2ec6fec94-staging-73847-deployment",
-          "s3Key": "amplify-builds/pythongrading-3648526e314a746f4e31-build.zip"
-        }
       }
     }
   }

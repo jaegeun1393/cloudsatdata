@@ -1,22 +1,17 @@
 export type AmplifyDependentResourcesAttributes = {
-    "function": {
-        "pythongrading": {
-            "Name": "string",
-            "Arn": "string",
-            "Region": "string",
-            "LambdaExecutionRole": "string"
-        }
-    },
     "api": {
         "cloudsatdata": {
             "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         },
-        "satgrading": {
-            "RootUrl": "string",
+        "gradingsat": {
+            "ServiceName": "string",
+            "ClusterName": "string",
+            "PipelineName": "string",
+            "ContainerNames": "string",
             "ApiName": "string",
-            "ApiId": "string"
+            "RootUrl": "string"
         }
     },
     "auth": {
