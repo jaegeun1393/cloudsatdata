@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from "react-router-dom";
-import {Auth, Hub} from 'aws-amplify';
-import { DataStore } from '@aws-amplify/datastore';
-import { Users } from './models';
 
 import './css/App.css';
 
@@ -33,36 +30,6 @@ function Signup() {
     if (email.length < 8 && error == false) {
       alert("Email is less than 8")
       error = true
-    }
-  
-    if (error == false) {
-      var username = email
-      try {
-      await Auth.signUp({ username, password, attributes: { name, email }})
-      updateformState(() => ({ ...formState, form: "confirm" }))
-      } catch(error) {
-        let text = String(error)
-        alert(error)
-
-        let result = text.includes("email already");
-        if (result) {
-          await Auth.resendSignUp(username);
-          updateformState(() => ({ ...formState, form: "confirm" }))
-        }
-      }
-      //navigate('/Login');
-    }
-  }
-
-  async function verficatehuman(code) {
-    var username = email
-    try {
-      await Auth.confirmSignUp(username, code);
-      navigate('/Login');
-    } catch(error) {
-      alert(error);
-      alert("Re send the verification code.");
-      await Auth.resendSignUp(username);
     }
   }
 
@@ -102,7 +69,7 @@ function Signup() {
                 <label className="mr-4 text-gray-700 font-bold inline-block mb-2" htmlFor="name">Verfication Code</label>
                 <input type="verficode" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Verfication code" value={verficode} onInput={e => setverficode(e.target.value)}/>
               </div>
-              <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300" onClick={()=>verficatehuman(verficode)}>Confirm</button>
+              <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300">Confirm</button>
             </div>
           </div>
         </div>

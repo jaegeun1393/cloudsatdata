@@ -59,8 +59,8 @@ function Downloads() {
       </div>
 
       <div className="col-span-4">
-        <p className="text-gray-700 font-bold"> Did you know our platform is 100% FREE? </p>
-        <p className="text-gray-500 mt-4"> Yes it is! We are offering Unlimited spaces, and uploading. </p>
+        <p className="text-gray-700 font-bold"> You can get the result anywhere! </p>
+        <p className="text-gray-500 mt-4"> Just grab the smartphone and enter the student ID code! </p>
       </div>
 
     </div>
@@ -70,8 +70,8 @@ function Downloads() {
     <div className="grid grid-cols-6 gap-3">
       
       <div className="col-span-4">
-        <p className="text-gray-700 font-bold"> Create an impact </p>
-        <p className="text-gray-500 mt-4"> Reduce the waiting time to get the response back from the teacher! </p>
+        <p className="text-gray-700 font-bold"> See where you are </p>
+        <p className="text-gray-500 mt-4"> Gain confidence and challenge for a high score! </p>
       </div>
 
       <div className="col-span-2">

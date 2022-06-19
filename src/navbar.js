@@ -43,10 +43,6 @@ class Navibar extends Component {
             <Link to={"/downloads"} className="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900" x-data="{ hover: false }">
                 <span className="block">Download</span>
             </Link>
-
-            <a href="#_" className="relative font-medium leading-6 text-gray-600 transition duration-150 ease-out hover:text-gray-900" x-data="{ hover: false }">
-                <span className="block">Story</span>
-            </a>
             </nav>
             {
               this.state.formState === false && (

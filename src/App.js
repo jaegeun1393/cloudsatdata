@@ -13,18 +13,11 @@ import StudentDash from "./dashboard/studentmanagement";
 import Viewscore from "./viewscore";
 
 import './css/App.css';
-import { API } from 'aws-amplify';
+
 
 
 function App() {
   document.title = "Cloud. SAT";
-  useEffect(() => {
-    const getData = async () => {
-      const data = await API.get('gradingsat', '/images')
-      console.log(data);
-    }
-    getData()
-  }, [])
 
   return (
     <div>
