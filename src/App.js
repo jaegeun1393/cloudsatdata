@@ -9,7 +9,9 @@ import Downloads from "./Download";
 import Uploadsat from "./uploadsat";
 import Signout from "./signout";
 import Dashboard from "./dashboard";
-import StudentDash from "./dashboard/studentmanagement";
+import Dashboard_student from "./dashboard_student";
+import AddSAT from "./dashboard/AddSAT";
+import Student_overview from "./dashboard/student_overview";
 import Viewscore from "./viewscore";
 
 import './css/App.css';
@@ -27,7 +29,11 @@ function App() {
         <Route path="/downloads" element={<Downloads />}></Route>
         <Route path="/uploadsat" element={<Uploadsat />}></Route>
         <Route path="/userdashboard" element={<Dashboard />}>
-          <Route path=":StudentDash" element={<StudentDash />}>
+          <Route path=":AddSAT" element={<AddSAT />}>
+          </Route>
+        </Route>
+        <Route path="/userdashboard_student" element={<Dashboard_student />}>
+          <Route path=":Student_overview" element={<Student_overview />}>
           </Route>
         </Route>
         <Route path="/viewscore" element={<Viewscore />}></Route>

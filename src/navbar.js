@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Auth, Hub} from 'aws-amplify';
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 import "./css/App.css"
 
 class Navibar extends Component {
@@ -9,17 +8,44 @@ class Navibar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      formState: false
+      formState: false,
+      role:""
     };
+    this.checkloginsession = this.checkloginsession.bind(this)
+    this.set_role = this.set_role.bind(this)
   }
 
-  async componentDidMount() {
-    try {
-        await Auth.currentAuthenticatedUser();
-        this.setState({ formState: true })
-    } catch {
-      this.setState({ formState: false })
-     }
+  async set_role() {
+    var self = this
+    if (this.state.formState == true) {
+      //axios.post('https://cloudsatdata.com/api/get_user_role', {})
+      axios.post('http://127.0.0.1:5000/get_user_role', {})
+      .then(function(response){
+        self.setState({role: response.data.role});
+      })
+      .catch(function(error){
+        alert(error);
+      });
+    }
+  }
+
+  async checkloginsession() {
+    var self = this
+    //axios.post('https://cloudsatdata.com/api/userchecklogin', {})
+    axios.post('http://127.0.0.1:5000/userchecklogin', {})
+    .then(function(response){
+      if(response.data.message == "True") {
+        self.setState({formState: true});
+        self.set_role();
+      }
+    })
+    .catch(function(error){
+      alert(error);
+    });
+  }
+
+  componentDidMount() {   
+    this.checkloginsession();
   }
 
   render() {
@@ -59,9 +85,20 @@ class Navibar extends Component {
                 <Link to={"/signout"} className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none">
                   Sign Out
                 </Link>
-                <Link to={"/userdashboard"} className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none">
-                  Dash Board
-                </Link>
+                {
+                  this.state.role === "student" && (
+                    <Link to={"/userdashboard_student"} className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none">
+                    Student Dash Board
+                  </Link>
+                  )
+                }
+                {
+                  this.state.role === "manager" && (
+                    <Link to={"/userdashboard"} className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none">
+                    Manager Dash Board
+                  </Link>
+                  )
+                }
               </div>         
               )
             }

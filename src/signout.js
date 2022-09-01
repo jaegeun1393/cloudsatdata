@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Navigate  } from "react-router-dom";
-import {Auth} from 'aws-amplify';
-
-import Nav from './navbar';
+import axios from "axios";
 import './css/App.css';
 
 class Signout extends Component {
@@ -15,16 +13,18 @@ class Signout extends Component {
   }
 
   async componentDidMount() {
-    try {
-      await Auth.signOut();
-      this.setState({ redirect: true }) 
-    } catch (error) {
+    var self = this
+    axios.post('https://cloudsatdata.com/api/logout', {})
+    .then(function(response){
+      alert(response.data.message);
+      window.location.replace("https://cloudsatdata.com/");
+    })
+    .catch(function(error){
       alert(error);
-    }
+    });
   }
 
   render() {
-    if (this.state.redirect) return <Navigate to="/Login" />
   return (
     <div>
 

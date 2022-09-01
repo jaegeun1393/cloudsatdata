@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from "react-router-dom";
-import {Auth, Hub} from 'aws-amplify';
-
+import axios from "axios";
 import './css/App.css';
 
 const initialsignset = {
@@ -10,17 +9,30 @@ const initialsignset = {
 
 function Login() {
   const [formState, updateformState] = useState(initialsignset)
-  const navigate = useNavigate();
   
   function onChange(e) {
     e.persist()
     updateformState(() => ({ ...formState, [e.target.name]: e.target.value }))
   }
 
-  async function login() {
-    const { userid, password } = formState
-    let log = await Auth.signIn(userid, password)
-    navigate('/');
+  function printeverything() {
+    if(formState.userid != "" && formState.password != "") {
+      var data = {
+        id: formState.userid,
+        password: formState.password,
+      }
+
+      axios.post('https://cloudsatdata.com/api/userLogin', data)
+      .then(function(response){
+        alert(response.data.message);
+        if (response.data.login == "True") {
+          window.location.replace("https://cloudsatdata.com/");
+        }
+      })
+      .catch(function(error){
+        alert(error);
+      });
+    }
   }
 
   return (
@@ -38,7 +50,7 @@ function Login() {
             <input name="password" type="password" className="border bg-gray-100 py-2 px-4 w-96 outline-none focus:ring-2 focus:ring-indigo-400 rounded" placeholder="Password" onChange={onChange}/>
           </div>
           <Link to="/signup" className="text-sm text-gray-700 inline-block mt-4 hover:text-indigo-600 hover:underline hover:cursor-pointer transition duration-200">Sign up</Link>
-          <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300" onClick={login}>LOGIN</button>
+          <button className="w-full mt-6 text-indigo-50 font-bold bg-indigo-600 py-3 rounded-md hover:bg-indigo-500 transition duration-300" onClick={printeverything}>LOGIN</button>
         </div>
       </div>
     </div>

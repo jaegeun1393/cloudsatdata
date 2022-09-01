@@ -1,59 +1,52 @@
 import React, { Component } from 'react';
-import { Routes, Route, Navigate, Link } from "react-router-dom";
-import {Auth} from 'aws-amplify';
+import axios from "axios";
 
 
 import './css/App.css';
-import StudentDash from "./dashboard/studentmanagement";
+import AddSAT from "./dashboard/AddSAT";
+import Viewscore from "./dashboard/Viewscore";
 
 class Dashboard extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      loginstate: ""
+      loginstate: false,
+      clicked: 0
     };
+    this.setclicked = this.setclicked.bind(this)
   }
 
-  async componentDidMount() {
-    try {
-        await Auth.currentAuthenticatedUser();
-        this.setState({ loginstate: true })
-    } catch {
-      this.setState({ loginstate: false })
-     }
+  setclicked(num) {
+    this.setState({clicked: num});
   }
 
   render() {
-    if (this.state.loginstate === false) return <Navigate to="/Login" />
-    const pathname = window.location.pathname;
   return (
     <div>
-
-
-<main className="flex w-full h-screen">
-<aside className="h-screen w-fulll hidden sm:block">
-  <div className="flex flex-col w-100 justify-between h-screen px-4">
+<main className="flex w-full h-auto overflow-auto	" style={{marginTop: "37px"}}>
+<aside className="w-80 h-screen bg-gray w-fulll hidden sm:block">
+  <div className="flex flex-col justify-between h-screen p-4">
       <div className="text-sm">
-        <div className="items-center mt-2 justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none cursor-pointer">Generate the SAT</div>
-        <Link to={`${pathname}/StudentDash`} className="items-center mt-2 justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none cursor-pointer">SAT management</Link>
-        <div className="items-center mt-2 justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none cursor-pointer">Students management</div>
-        <div className="items-center mt-2 justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none cursor-pointer">Setting</div>
-        <div className="items-center mt-2 justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-blue-50 focus:outline-none focus:shadow-none cursor-pointer">Sign Out</div>
+        <div className="bg-gray-600 text-blue-300 p-5 rounded mt-2 cursor-pointer" onClick={() => this.setclicked(0)}>Add SAT DB</div>
+        <div className="bg-gray-200 text-blue-300 p-5 rounded mt-2 cursor-pointer" onClick={() => this.setclicked(1)}>Search Students</div>
       </div>
   </div>
 </aside>
 
-<section className="w-full bg-gray-200">
-    <Routes>
-        <Route path="StudentDash/" element={<StudentDash />}></Route>
-      </Routes>
-</section>
+<section className="w-full p-4">
+  <div className="w-full h-64 p-4 text-md">
+    {this.state.clicked == 0 &&
+    <AddSAT />
+    }
+    {this.state.clicked == 1 &&
+    <Viewscore />
+    }
+  </div>
+  </section>
 
 </main>
-
-  </div>
-  
+    </div>
   );
   }
 }
