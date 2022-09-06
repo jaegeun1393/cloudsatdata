@@ -133,7 +133,7 @@ class Student_overview extends Component {
         <h4 className="text-sm font-bold text-indigo-600">Hi {this.state.studentname}, Student ID: {this.state.s_id}</h4>
         <h1 className="text-4xl font-bold text-indigo-900 mt-">SAT Overview</h1>
       </div>
-      
+
       <div className="rounded-xl mt-4 p-4 bg-white shadow-lg">
         <h1 className="text-xl font-bold text-gray-800 mt-4">Result</h1>
         <div className="justify-between space-x-4 text-center mt-6">

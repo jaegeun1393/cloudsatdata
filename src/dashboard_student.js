@@ -4,6 +4,7 @@ import axios from "axios";
 
 import './css/App.css';
 import Student_overview from "./dashboard/student_overview";
+import SatChart from "./dashboard/sat_chart";
 
 class Dashboard_student extends Component {
 
@@ -28,6 +29,7 @@ class Dashboard_student extends Component {
   <div className="flex flex-col justify-between h-screen p-4">
       <div className="text-sm">
         <div className="bg-gray-600 text-blue-300 p-5 rounded mt-2 cursor-pointer" onClick={() => this.setclicked(0)}>View SAT Score</div>
+        <div className="bg-gray-600 text-blue-300 p-5 rounded mt-2 cursor-pointer" onClick={() => this.setclicked(1)}>View SAT Graph</div>
       </div>
   </div>
 </aside>
@@ -36,6 +38,9 @@ class Dashboard_student extends Component {
   <div className="w-full h-64 p-4 text-md">
     {this.state.clicked == 0 &&
     <Student_overview />
+    }
+    {this.state.clicked == 1 &&
+    <SatChart />
     }
   </div>
   </section>

@@ -45,7 +45,7 @@ def index():
 @app.route("/userchecklogin", methods=["GET", "POST"])
 def check_login():
     #REMOVE
-    #session["response"] = True
+    session["response"] = True
     if "response" in session:
         return jsonify({'message': "True"})
     else:
@@ -218,7 +218,7 @@ def adduser():
 @app.route("/student_dashboard_overview", methods=["GET", "POST"])
 def getname():
     #REMOVE
-    #session['user_name'] = "Jaegeun Oh"
+    session['user_name'] = "Jaegeun Oh"
 
     conn = db.connect()
     cur = conn.cursor()
@@ -255,7 +255,7 @@ def getname():
 @app.route("/get_user_name", methods=["GET", "POST"])
 def getstudetnid():
     #REMOVE
-    #session['user_name'] = "geun"
+    session['user_name'] = "Jaegeun Oh"
     
     return jsonify({
         'name': session['user_name']
@@ -264,7 +264,7 @@ def getstudetnid():
 @app.route("/get_user_role", methods=["GET", "POST"])
 def getrole():
     #REMOVE
-    #session['user_name'] = "geun"
+    session['user_name'] = "Jaegeun Oh"
 
     conn = db.connect()
     cur = conn.cursor()
