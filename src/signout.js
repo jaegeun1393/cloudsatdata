@@ -14,10 +14,10 @@ class Signout extends Component {
 
   async componentDidMount() {
     var self = this
-    axios.post('https://cloudsatdata.com/api/logout', {})
+    axios.post('https://ocr.min.farm/api/logout', {})
     .then(function(response){
       alert(response.data.message);
-      window.location.replace("https://cloudsatdata.com/");
+      window.location.replace("https://ocr.min.farm");
     })
     .catch(function(error){
       alert(error);

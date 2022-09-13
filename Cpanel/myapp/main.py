@@ -21,9 +21,9 @@ app.config['SECRET_KEY'] = '_lhvudxs%wfhb-ks2vh1l+_g&y)3rw$338d)ia4j&gf&^e_y-='
 #app.config['MYSQL_DATABASE_DB'] = 'aiden1393_cloud_sat_data'
 
 app.config['MYSQL_DATABASE_HOST'] = '127.0.0.1'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'hunter2'
-app.config['MYSQL_DATABASE_DB'] = 'cloud_sat_data'
+app.config['MYSQL_DATABASE_USER'] = 'minfarm_ocr_admin'
+app.config['MYSQL_DATABASE_PASSWORD'] = "ah6G38rjji3y"
+app.config['MYSQL_DATABASE_DB'] = 'minfarm_ocr'
 app.config['MYSQL_DATABASE_PORT'] = 3306
 CORS(app, support_credentials=True)
 
@@ -45,7 +45,7 @@ def index():
 @app.route("/userchecklogin", methods=["GET", "POST"])
 def check_login():
     #REMOVE
-    session["response"] = True
+    #session["response"] = True
     if "response" in session:
         return jsonify({'message': "True"})
     else:
@@ -218,7 +218,7 @@ def adduser():
 @app.route("/student_dashboard_overview", methods=["GET", "POST"])
 def getname():
     #REMOVE
-    session['user_name'] = "Jaegeun Oh"
+    #session['user_name'] = "Jaegeun Oh"
 
     conn = db.connect()
     cur = conn.cursor()
@@ -255,7 +255,7 @@ def getname():
 @app.route("/get_user_name", methods=["GET", "POST"])
 def getstudetnid():
     #REMOVE
-    session['user_name'] = "Jaegeun Oh"
+    #session['user_name'] = "geun"
     
     return jsonify({
         'name': session['user_name']
@@ -264,7 +264,7 @@ def getstudetnid():
 @app.route("/get_user_role", methods=["GET", "POST"])
 def getrole():
     #REMOVE
-    session['user_name'] = "Jaegeun Oh"
+    #session['user_name'] = "geun"
 
     conn = db.connect()
     cur = conn.cursor()

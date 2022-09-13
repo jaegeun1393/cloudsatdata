@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Intel\Desktop\cloudsatdata\env"
+VIRTUAL_ENV="C:\Users\Intel\Documents\GitHub\cloudsatdata\env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

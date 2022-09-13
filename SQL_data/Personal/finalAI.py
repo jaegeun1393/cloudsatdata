@@ -64,10 +64,10 @@ image = cv2.resize(original, (0,0), fx=1/ratio, fy=1/ratio)
 #Change the image to gray scale and trace the edge of the paper
 imggray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 imggray = cv2.GaussianBlur(imggray, (1, 1), 0)
-#cv2.imshow("imggray", imggray)
+cv2.imshow("imggray", imggray)
 imgedged = cv2.Canny(imggray, 75, 120)
-#cv2.imshow("imgedged", imgedged)
-#cv2.waitKey(0)
+cv2.imshow("imgedged", imgedged)
+cv2.waitKey(0)
 
 #find all spaces and sorted them to find the max size 
 cnts = cv2.findContours(imgedged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
@@ -93,8 +93,8 @@ for c in cnts:
 warped = four_point_transform(original, screenCnt.reshape(4, 2) * ratio)
 warorigin = imutils.resize(warped, width=1951, height = 1577)
 warorigincpy = warorigin.copy()
-#cv2.imshow("warped", warped)
-#cv2.waitKey(0)
+cv2.imshow("warped", warped)
+cv2.waitKey(0)
 
 #Split in to sections
 
@@ -107,8 +107,8 @@ warorigincpy = warorigin.copy()
 warorigin = cv2.cvtColor(warorigin, cv2.COLOR_BGR2GRAY)
 warorigin = cv2.GaussianBlur(warorigin, (1, 1), 0)
 warorigin = cv2.Canny(warorigin , 60, 100)
-#cv2.imshow("warorigin", warorigin)
-#cv2.waitKey(0)
+cv2.imshow("warorigin", warorigin)
+cv2.waitKey(0)
 
 contours, h =cv2.findContours(warorigin,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE) #Find contours
 

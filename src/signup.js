@@ -32,11 +32,11 @@ function Signup() {
         id: email
       }
 
-      axios.post('https://cloudsatdata.com/api/updateacc', data)
+      axios.post('https://ocr.min.farm/api/updateacc', data)
       //axios.post('http://127.0.0.1:5000/updateacc', data)
       .then(function(response){
         alert(response.data.success);
-        window.location.replace("https://cloudsatdata.com");
+        window.location.replace("https://ocr.min.farm");
       })
       .catch(function(error){
         alert(error);

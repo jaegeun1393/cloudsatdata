@@ -87,7 +87,7 @@ class Uploadsat extends Component {
     this.setState({edit_btn: "block"});
 
     var self = this
-    axios.post('https://cloudsatdata.com/api/upload/sat/answer/update', data)
+    axios.post('https://ocr.min.farm/api/upload/sat/answer/update', data)
     //axios.post('http://127.0.0.1:5000/upload/sat/answer/update', data)
     .then(function(response){
       self.setState({sat_total_score: "Total SAT Score: " + response.data.sat_total});
@@ -183,7 +183,7 @@ class Uploadsat extends Component {
       formData.append("sat_id", this.state.sat_id);
 
       var self = this
-      axios.post('https://cloudsatdata.com/api/uploadimg', formData)
+      axios.post('https://ocr.min.farm/api/uploadimg', formData)
       //axios.post('http://127.0.0.1:5000/uploadimg', formData)
       .then(function(response){
         if (!response.data.error) {

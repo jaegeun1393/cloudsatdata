@@ -44,7 +44,7 @@ class AddSAT extends Component {
 
   async get_user_name() {
     var self = this
-    axios.post('https://cloudsatdata.com/api/get_user_name', {})
+    axios.post('https://ocr.min.farm/api/get_user_name', {})
     .then(function(response){
       self.setState({studentname: response.data.name})
     })
@@ -85,7 +85,7 @@ class AddSAT extends Component {
         grading2: this.state.grading2,
         grading3: this.state.grading3
       }
-      axios.post('https://cloudsatdata.com/api/addsat', data)
+      axios.post('https://ocr.min.farm/api/addsat', data)
       //axios.post('http://127.0.0.1:5000/addsat', data)
       .then(function(response){
         alert(response.data.success)

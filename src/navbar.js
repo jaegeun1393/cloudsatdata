@@ -18,10 +18,11 @@ class Navibar extends Component {
   async set_role() {
     var self = this
     if (this.state.formState == true) {
-      //axios.post('https://cloudsatdata.com/api/get_user_role', {})
-      axios.post('http://127.0.0.1:5000/get_user_role', {})
+      axios.post('https://ocr.min.farm/api/get_user_role', {})
+      //axios.post('http://127.0.0.1:5000/get_user_role', {})
       .then(function(response){
         self.setState({role: response.data.role});
+        console.log(self.state.role);
       })
       .catch(function(error){
         alert(error);
@@ -31,8 +32,8 @@ class Navibar extends Component {
 
   async checkloginsession() {
     var self = this
-    //axios.post('https://cloudsatdata.com/api/userchecklogin', {})
-    axios.post('http://127.0.0.1:5000/userchecklogin', {})
+    axios.post('https://ocr.min.farm/api/userchecklogin', {})
+    //axios.post('http://127.0.0.1:5000/userchecklogin', {})
     .then(function(response){
       if(response.data.message == "True") {
         self.setState({formState: true});

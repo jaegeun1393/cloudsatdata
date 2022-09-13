@@ -86,7 +86,7 @@ class Viewscore extends Component {
     this.setState({edit_btn: "block"});
 
     var self = this
-    axios.post('https://cloudsatdata.com/api/upload/sat/answer/update', data)
+    axios.post('https://ocr.min.farm/api/upload/sat/answer/update', data)
     //axios.post('http://127.0.0.1:5000/upload/sat/answer/update', data)
     .then(function(response){
       self.setState({sat_total_score: "Total SAT Score: " + response.data.sat_total});
@@ -149,7 +149,7 @@ class Viewscore extends Component {
       sat_id: sat_id
     }
     var self = this
-    axios.post('https://cloudsatdata.com/api/get/sat/score/id', data)
+    axios.post('https://ocr.min.farm/api/get/sat/score/id', data)
     //axios.post('http://127.0.0.1:5000/get/sat/score/id', data)
     .then(function(response){
       if (!response.data.error) {
@@ -225,7 +225,7 @@ class Viewscore extends Component {
       s_id: this.state.s_id
     }
     var self = this
-    axios.post('https://cloudsatdata.com/api/get/student/info', data)
+    axios.post('https://ocr.min.farm/api/get/student/info', data)
     //axios.post('http://127.0.0.1:5000/get/student/info', data)
     .then(function(response){
       self.lst_score(response.data, response.data.eng_sc.length, response.data.sat_name.replaceAll("'", "").replace(/\s*,\s*/g, ","));
@@ -240,7 +240,7 @@ class Viewscore extends Component {
       id: this.state.s_name
     }
     var self = this
-    axios.post('https://cloudsatdata.com/api/get/student/id', data)
+    axios.post('https://ocr.min.farm/api/get/student/id', data)
     //axios.post('http://127.0.0.1:5000/get/student/id', data)
     .then(function(response){
       alert(response.data.message);
@@ -252,7 +252,7 @@ class Viewscore extends Component {
 
   async get_user_name() {
     var self = this
-    axios.post('https://cloudsatdata.com/api/get_user_name', {})
+    axios.post('https://ocr.min.farm/api/get_user_name', {})
     .then(function(response){
       self.setState({studentname: response.data.name})
     })

@@ -17,14 +17,14 @@ def gradingsection(image, row, col, num, prex, locy): #10, 5, 52
     for c in range(0, col):
         for r in range(0, row):
             cropped = image[(r * 36) + locy: ((r+1) * 36) + locy, (c * 380) + prex: ((c+1) * 380) + prex]
-            #cv2.imshow("cropped form", cropped) 
-            #cv2.waitKey(0)
+            cv2.imshow("cropped form", cropped) 
+            cv2.waitKey(0)
             loc = 0
             shdlst = []
             for locx in cX:
                 letter = cropped[0: 25, locx-15: locx + 25]
-                #cv2.imshow("letter form", letter) 
-                #cv2.waitKey(0)
+                cv2.imshow("letter form", letter) 
+                cv2.waitKey(0)
                 shdlvl = np.average(letter)
                 shdlst.append(shdlvl)
                 #print(shdlvl)

@@ -37,7 +37,7 @@ class Student_overview extends Component {
       sat_id: sat_id
     }
     var self = this
-    axios.post('https://cloudsatdata.com/api/get/sat/score/id', data)
+    axios.post('https://ocr.min.farm/api/get/sat/score/id', data)
     //axios.post('http://127.0.0.1:5000/get/sat/score/id', data)
     .then(function(response){
       if (!response.data.error) {
@@ -103,7 +103,7 @@ class Student_overview extends Component {
     var self = this;
 
     //axios.post('http://127.0.0.1:5000/student_dashboard_overview', {})
-    axios.post('https://cloudsatdata.com/api/student_dashboard_overview', {})
+    axios.post('https://ocr.min.farm/api/student_dashboard_overview', {})
     .then(function(response){
       self.setState({s_id: response.data.s_id});
       self.setState({studentname: response.data.s_name});

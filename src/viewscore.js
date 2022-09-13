@@ -55,7 +55,7 @@ class Viewscore extends Component {
         s_id: this.state.student_id
       }
       var self = this
-      axios.post('https://cloudsatdata.com/api/get/student/info', data)
+      axios.post('https://ocr.min.farm/api/get/student/info', data)
       //axios.post('http://127.0.0.1:5000/get/student/info', data)
       .then(function(response){
         self.lst_score(response.data, response.data.eng_sc.length);

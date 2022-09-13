@@ -21,12 +21,11 @@ function Login() {
         id: formState.userid,
         password: formState.password,
       }
-
-      axios.post('https://cloudsatdata.com/api/userLogin', data)
+      axios.post('https://ocr.min.farm/api/userLogin', data)
       .then(function(response){
         alert(response.data.message);
         if (response.data.login == "True") {
-          window.location.replace("https://cloudsatdata.com/");
+          window.location.replace("https://ocr.min.farm");
         }
       })
       .catch(function(error){

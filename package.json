@@ -1,6 +1,6 @@
 {
-  "name": "satcloud",
-  "homepage": "http://cloudsatdata.com/",
+  "name": "ocrminfarm",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
